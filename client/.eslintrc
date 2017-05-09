@@ -8,6 +8,7 @@
     "linebreak-style": ["error", "windows"],
     "no-unused-vars": 1,
     "consistent-return": 0,
-    "func-names": 0
+    "func-names": 0,
+    "react/prefer-stateless-function": 0
   }
 }
