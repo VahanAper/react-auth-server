@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { reduxForm } from 'redux-form';
+import * as actions from '../../actions';
 
 class Signin extends Component {
   constructor(props) {
@@ -10,6 +11,8 @@ class Signin extends Component {
   handleFormSubmit({ email, password }) {
     console.log('email', email); // eslint-disable-line
     console.log('password', password); // eslint-disable-line
+
+    this.props.signinUser({ email, password });
   }
 
   render() {
@@ -37,6 +40,7 @@ Signin.propTypes = {
     password: PropTypes.object,
   }),
   handleSubmit: PropTypes.func.isRequired,
+  signinUser: PropTypes.func.isRequired,
 };
 Signin.defaultProps = {
   fields: {
@@ -48,4 +52,4 @@ Signin.defaultProps = {
 export default reduxForm({
   form: 'signin',
   fields: ['email', 'password'],
-})(Signin);
+}, null, actions)(Signin);
