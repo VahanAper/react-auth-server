@@ -1,0 +1,13 @@
+{
+	"extends": "airbnb",
+  "env": {
+    "node": true,
+    "browser": true
+  },
+  "rules": {
+    "linebreak-style": ["error", "windows"],
+    "no-unused-vars": 1,
+    "consistent-return": 0,
+    "func-names": 0
+  }
+}
