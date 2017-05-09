@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import Header from './header';
 
@@ -7,7 +7,15 @@ export default class App extends Component {
     return (
       <div>
         <Header />
+        {this.props.children}
       </div>
     );
   }
 }
+
+App.propTypes = {
+  children: PropTypes.shape(),
+};
+App.defaultProps = {
+  children: {},
+};
