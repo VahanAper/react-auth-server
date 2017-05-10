@@ -7,12 +7,22 @@ class Feature extends Component {
     this.props.fetchMessage();
   }
   render() {
-    return <div>This is a feature!!!</div>;
+    return <div>{this.props.message}</div>;
   }
 }
 
 Feature.propTypes = {
   fetchMessage: PropTypes.func.isRequired,
+  message: PropTypes.string,
+};
+Feature.defaultProps = {
+  message: null,
 };
 
-export default connect(null, actions)(Feature);
+const mapStateToProps = function (state) {
+  return {
+    message: state.auth.message,
+  };
+};
+
+export default connect(mapStateToProps, actions)(Feature);
