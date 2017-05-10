@@ -9,9 +9,6 @@ class Signin extends Component {
   }
 
   handleFormSubmit({ email, password }) {
-    console.log('email', email); // eslint-disable-line
-    console.log('password', password); // eslint-disable-line
-
     this.props.signinUser({ email, password });
   }
 
